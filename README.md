@@ -1,5 +1,8 @@
 # Flutter Banking Mobile App (UI Demo)
 
+![Build Status](https://img.shields.io/github/workflow/status/samkiyya/banking-mobile-app/CI)
+![License](https://img.shields.io/github/license/samkiyya/banking-mobile-app)
+
 ## Table of Contents
 
 - [Flutter Banking Mobile App (UI Demo)](#flutter-banking-mobile-app-ui-demo)
@@ -10,6 +13,7 @@
   - [Technologies Used](#technologies-used)
   - [Setup \& Installation](#setup--installation)
   - [Folder Structure](#folder-structure)
+  - [Resources](#resources)
   - [Contributing](#contributing)
   - [Contact](#contact)
 
@@ -79,67 +83,94 @@ Here are sample screenshots of the app, showcasing its features and simulating r
    flutter run
    ```
 
-   - For iOS:
+   - For iOS: Ensure you have an iOS device or simulator set up, then run:
 
      ```bash
      flutter run --release
      ```
 
+_Note: The `--release` flag is generally used for build and deployment, not for running on an iOS device._
+
 **Note:** All functionalities, including registration, login, account management, transactions, and logout, are simulated using hardcoded values and mock data stored in map collections. There are no real backend services or databases connected in this demo, but the app is designed to mimic the behavior of a real banking application.
 
 ## Folder Structure
 
-Here is the folder structure of the project:
+The project is organized into a clear and logical folder structure to ensure ease of navigation and maintainability. Below is a detailed breakdown:
 
 ```bash
 lib/
-├── animations/                      # Contains animations for screen transitions
-│   └── fade_animation.dart          # Animation for login and welcome screen transitions
-├── controllers/                     # Controller files handling logic for each screen
-│   ├── account_details_controller.dart
-│   ├── bill_payment_controller.dart
-│   ├── controller_data_layer.dart
-│   ├── home_controller.dart
-│   ├── login_controller.dart
-│   ├── settings_controller.dart
-│   ├── support_controller.dart
-│   ├── trans_history_controller.dart
-│   ├── transfer_funds_controller.dart
-│   └── welcome_controller.dart
-├── models/                          # Data models for each feature
-│   ├── account_details_model.dart
-│   ├── bill_payment_model.dart
-│   ├── home_model.dart
-│   ├── login_model.dart
-│   ├── models_data_layer.dart
-│   ├── settings_model.dart
-│   ├── support_model.dart
-│   ├── trans_history_model.dart
-│   ├── transfer_funds_model.dart
-│   └── welcome_model.dart
-├── utilities/                       # Contains utility widgets
-│   └── background_widget.dart       # Consistent background widget used across screens
-├── view/                            # All UI screens
-│   ├── account_details_screen.dart
-│   ├── bill_payment_screen.dart
-│   ├── home_screen.dart
-│   ├── login_screen.dart
-│   ├── screen_package.dart
-│   ├── settings_screen.dart
-│   ├── support_screen.dart
-│   ├── transaction_history_screen.dart
-│   ├── transfer_funds_screen.dart
-│   └── welcome_splash_screen.dart
-├── main.dart                        # Entry point of the app
+├── animations/                      # Contains custom animations for smooth transitions between screens
+│   └── fade_animation.dart          # Defines the fade animation for login and welcome screen transitions
+├── controllers/                     # Manages the business logic and state for each screen
+│   ├── account_details_controller.dart  # Handles logic related to account details
+│   ├── bill_payment_controller.dart     # Manages bill payment functionalities
+│   ├── controller_data_layer.dart       # Abstracts data handling and interaction for controllers
+│   ├── home_controller.dart             # Manages the logic for the home screen
+│   ├── login_controller.dart            # Handles user login processes
+│   ├── settings_controller.dart         # Manages user settings and preferences
+│   ├── support_controller.dart          # Handles customer support functionalities
+│   ├── trans_history_controller.dart    # Manages transaction history logic
+│   ├── transfer_funds_controller.dart   # Handles fund transfer operations
+│   └── welcome_controller.dart          # Manages logic for the welcome and onboarding screens
+├── models/                          # Defines data structures and models for the application
+│   ├── account_details_model.dart      # Model representing user account details
+│   ├── bill_payment_model.dart         # Model for bill payment information
+│   ├── home_model.dart                 # Model for home screen data
+│   ├── login_model.dart                # Model for user login data
+│   ├── models_data_layer.dart          # Abstracts data handling for models
+│   ├── settings_model.dart             # Model for application settings
+│   ├── support_model.dart              # Model for customer support data
+│   ├── trans_history_model.dart        # Model for transaction history data
+│   ├── transfer_funds_model.dart       # Model for fund transfer data
+│   └── welcome_model.dart              # Model for welcome and onboarding data
+├── utilities/                       # Utility widgets and helper functions used across the app
+│   └── background_widget.dart       # Provides a consistent background for screens
+├── view/                            # Contains all UI components and screens
+│   ├── account_details_screen.dart    # UI for displaying account details
+│   ├── bill_payment_screen.dart       # UI for bill payment functionality
+│   ├── home_screen.dart               # UI for the home page
+│   ├── login_screen.dart              # UI for user login
+│   ├── screen_package.dart            # Contains reusable screen components
+│   ├── settings_screen.dart           # UI for user settings
+│   ├── support_screen.dart            # UI for customer support
+│   ├── transaction_history_screen.dart # UI for viewing transaction history
+│   ├── transfer_funds_screen.dart      # UI for fund transfer
+│   └── welcome_splash_screen.dart      # UI for the initial welcome screen
+├── main.dart                        # The main entry point of the application
 assets/
-├── images/                          # Assets folder for images
-│   └── logo.png                     # App logo
-screenshots/                         # Screenshots of the app UI for the README
+├── images/                          # Directory for application assets like images
+│   └── logo.png                     # Application logo
+screenshots/                         # Directory containing screenshots for the README
 ```
+
+### Highlights
+
+- **`controllers/`**: Manages the business logic and state for each screen, keeping the UI and business logic separate.
+- **`models/`**: Defines data structures and abstracts data handling, ensuring a clean separation between data and presentation layers.
+- **`utilities/`**: Contains reusable components and helper functions to avoid code duplication and maintain consistency.
+- **`view/`**: Houses all UI components and screens, providing a clear structure for managing different views of the application.
+
+This organization facilitates easy navigation and modification, ensuring that the codebase remains clean and maintainable.
+
+## Resources
+
+If this is your first Flutter project, here are some resources to help you get started:
+
+- [Write Your First Flutter App](https://docs.flutter.dev/get-started/codelab): A step-by-step guide to building your first Flutter app.
+- [Flutter Cookbook](https://docs.flutter.dev/cookbook): A collection of useful Flutter samples and recipes.
+
+For additional help with Flutter development, view the [Flutter online documentation](https://docs.flutter.dev/), which includes tutorials, samples, and a comprehensive API reference.
 
 ## Contributing
 
 If you'd like to contribute to the project, feel free to submit a pull request or raise an issue to suggest improvements or additional features to enhance the UI demonstration.
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Submit a pull request with a detailed description of your changes.
+
+For issues or suggestions, open an issue on GitHub.
 
 ## Contact
 
@@ -147,3 +178,4 @@ If you have any questions or feedback, feel free to reach out!
 
 - **LinkedIn**: [Samuel Aberra](https://linkedin.com/in/samkiyya)
 - **GitHub**: [Samkiyya](https://github.com/samkiyya)
+- **Email**: <samuelabera523@gmail.com>
